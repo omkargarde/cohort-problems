@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <style>
+      .grid-center {
+        width: min(100% - 3rem, var(--container-max, 90ch));
+        margin-inline: auto;
+      }
+      button {
+        cursor: pointer;
+        padding: 5px 10px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          label {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            input {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body class="grid-center">
+    <form id="new-task-form">
+      <label for="new-task-title">Enter your tasks</label><br />
+      <input type="text" id="new-task-title" />
+      <button type="submit">Add</button>
+    </form>
+    <ul id="list"></ul>
+    <!-- script tags -->
+    <script type="module" src="index.ts"></script>
+  </body>
+</html>

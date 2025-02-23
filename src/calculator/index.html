@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>calculator-using-ts-html-css</title>
+  </head>
+  <body class="center-body-content">
+    <header>
+      <h1>Calculator</h1>
+    </header>
+    <main>
+      <section>
+        <div id="display"></div>
+      </section>
+      <section>
+        <div id="buttons" class="grid">
+          <button class="button">7</button>
+          <button class="button">8</button>
+          <button class="button">9</button>
+          <button class="button" data-action="divide">/</button>
+          <button class="button">4</button>
+          <button class="button">5</button>
+          <button class="button">6</button>
+          <button class="button" data-action="multiply">*</button>
+          <button class="button">1</button>
+          <button class="button">2</button>
+          <button class="button">3</button>
+          <button class="button" data-action="subtract">-</button>
+          <button class="button" data-action="clear">C</button>
+          <button class="button">0</button>
+          <button class="button" data-action="equals">=</button>
+          <button class="button" data-action="addition">+</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
