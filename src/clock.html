@@ -78,12 +78,20 @@
         <div class="hand second" id="second"></div>
         <div class="center"></div>
       </div>
+      <hr />
+      <h2 id="today" class="center-body-content"></h2>
     </main>
     <script>
       const DigitalClock = document.getElementById("DigitalClock");
       const hourHand = document.getElementById("hour");
       const minuteHand = document.getElementById("minute");
       const secondHand = document.getElementById("second");
+      const todayDate = document.getElementById("today");
+      const date = new Date();
+      console.log(date);
+      todayDate.innerText = `Today is ${date.getDate()}/${
+        date.getMonth() + 1
+      }/${date.getFullYear()}`;
       setInterval(() => {
         const date = new Date();
         const hours = date.getHours();
@@ -92,7 +100,7 @@
         // update digital clock
         DigitalClock.innerText = `${hours}:${minutes}:${seconds}`;
         // update analog clock
-        const hourDeg = 30 * hours + minutes / 2;
+        const hourDeg = 30 * hours + (minutes / 60) * 30;
         const minuteDeg = 6 * minutes;
         const secondDeg = 6 * seconds;
         hourHand.style.transform = `rotate(${hourDeg + 90}deg)`;
