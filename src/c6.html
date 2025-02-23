@@ -13,24 +13,92 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <title>Cohort Problems</title>
+    <style>
+      .clock {
+        width: 300px;
+        height: 300px;
+        background: white;
+        border-radius: 50%;
+        border: 10px solid #333;
+        position: relative;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .hand {
+        width: 50%;
+        height: 4px;
+        background: #333;
+        position: absolute;
+        top: 50%;
+        transform-origin: 100%;
+        transition: transform 0.05s ease-in-out;
+        border-radius: 2px;
+      }
+
+      .hour {
+        width: 30%;
+        height: 6px;
+        background: #000;
+        left: 20%;
+      }
+
+      .minute {
+        width: 40%;
+        left: 10%;
+      }
+
+      .second {
+        width: 45%;
+        background: #e63946;
+        left: 5%;
+      }
+
+      .center {
+        width: 12px;
+        height: 12px;
+        background: #333;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
   </head>
-  <body>
+  <body class="center-body-content">
     <header>
       <h1>Clock</h1>
     </header>
     <main>
-      <div id="time"></div>
+      <h2 id="DigitalClock" class="center-body-content"></h2>
+      <hr />
+      <div class="clock">
+        <div class="hand hour" id="hour"></div>
+        <div class="hand minute" id="minute"></div>
+        <div class="hand second" id="second"></div>
+        <div class="center"></div>
+      </div>
     </main>
+    <script>
+      const DigitalClock = document.getElementById("DigitalClock");
+      const hourHand = document.getElementById("hour");
+      const minuteHand = document.getElementById("minute");
+      const secondHand = document.getElementById("second");
+      setInterval(() => {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        // update digital clock
+        DigitalClock.innerText = `${hours}:${minutes}:${seconds}`;
+        // update analog clock
+        const hourDeg = 30 * hours + minutes / 2;
+        const minuteDeg = 6 * minutes;
+        const secondDeg = 6 * seconds;
+        hourHand.style.transform = `rotate(${hourDeg + 90}deg)`;
+        minuteHand.style.transform = `rotate(${minuteDeg + 90}deg)`;
+        secondHand.style.transform = `rotate(${secondDeg + 90}deg)`;
+      }, 1000);
+    </script>
   </body>
-  <script>
-    const timeElement = document.getElementById("time");
-    setInterval(() => {
-      const date = new Date();
-      const hour = date.getHours();
-      const minute = date.getMinutes();
-      const second = date.getSeconds();
-      timeElement.innerText = `${hour}:${minute}:${second}`;
-    }, 1000);
-  </script>
-  const date = new Date();
 </html>

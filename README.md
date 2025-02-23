@@ -1,6 +1,6 @@
 # javascript challenge and problems
 
-bun server is used to serve static html files
+Bun is used to serve static HTML
 
 To install dependencies:
 
@@ -14,4 +14,10 @@ To run:
 bun run start
 ```
 
-after starting the bun server, user can navigate to [http://localhost:3000/](http://localhost:3000/), on the index page, routes are provided to all the my work which is ready to be showcased
+After starting the bun server, user can navigate to [http://localhost:3000/](http://localhost:3000/), on the index page, routes are provided to all the my work which is ready to be showcased
+
+## Tech stack
+
+- HTML
+- CSS
+- TypeScript
