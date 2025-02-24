@@ -72,7 +72,7 @@
     <main>
       <h2 id="DigitalClock" class="center-body-content"></h2>
       <hr />
-      <div class="clock">
+      <div class="clock mx-auto">
         <div class="hand hour" id="hour"></div>
         <div class="hand minute" id="minute"></div>
         <div class="hand second" id="second"></div>
@@ -92,11 +92,15 @@
       todayDate.innerText = `Today is ${date.getDate()}/${
         date.getMonth() + 1
       }/${date.getFullYear()}`;
-      setInterval(() => {
+      function getDigitalClock() {
         const date = new Date();
+        // const hours = date.getHours() % 12 || 12;
+        // const ampm = hours > 12 ? "PM" : "AM";
         const hours = date.getHours();
-        const minutes = date.getMinutes();
-        const seconds = date.getSeconds();
+        const minutes =
+          date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+        const seconds =
+          date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
         // update digital clock
         DigitalClock.innerText = `${hours}:${minutes}:${seconds}`;
         // update analog clock
@@ -106,7 +110,11 @@
         hourHand.style.transform = `rotate(${hourDeg + 90}deg)`;
         minuteHand.style.transform = `rotate(${minuteDeg + 90}deg)`;
         secondHand.style.transform = `rotate(${secondDeg + 90}deg)`;
+      }
+      setInterval(() => {
+        getDigitalClock;
       }, 1000);
+      getDigitalClock();
     </script>
   </body>
 </html>

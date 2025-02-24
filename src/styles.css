@@ -1,26 +1,12 @@
-:root {
-  --melon: hsla(0, 100%, 84%, 1);
-  --sunset: hsla(33, 100%, 82%, 1);
-  --cream: hsla(62, 100%, 86%, 1);
-  --tea-green: hsla(110, 100%, 87%, 1);
-  --electric-blue: hsla(185, 100%, 80%, 1);
-  --jordy-blue: hsla(217, 100%, 81%, 1);
-  --periwinkle: hsla(249, 100%, 85%, 1);
-  --mauve: hsla(300, 100%, 89%, 1);
-  --baby-powder: hsla(60, 100%, 99%, 1);
-  --rich-black: hsla(211, 53%, 11%, 1);
-  --oxford-blue: hsla(219, 37%, 17%, 1);
-  --yinmn-blue: hsla(212, 29%, 36%, 1);
-  --silver-lake-blue: hsla(214, 23%, 56%, 1);
-  --platinum: hsla(75, 6%, 87%, 1);
-  --font-regular: 400;
-  --font-bold: 700;
-  --font-family: "Anonymous Pro", serif;
-}
+@import "./globalStyles/colors.css";
+@import "./globalStyles/fonts.css";
 * {
   background-color: var(--baby-powder);
   color: var(--oxford-blue);
   font-family: var(--font-family);
+}
+.mx-auto {
+  margin-inline: auto;
 }
 .center-body-content {
   display: flex;
