@@ -31,7 +31,6 @@
         position: absolute;
         top: 50%;
         transform-origin: 100%;
-        transition: transform 0.05s ease-in-out;
         border-radius: 2px;
       }
 
@@ -88,10 +87,12 @@
       const secondHand = document.getElementById("second");
       const todayDate = document.getElementById("today");
       const date = new Date();
-      console.log(date);
-      todayDate.innerText = `Today is ${date.getDate()}/${
-        date.getMonth() + 1
-      }/${date.getFullYear()}`;
+
+      todayDate.innerText = `Today is ${date.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })}`;
       function getDigitalClock() {
         const date = new Date();
         // const hours = date.getHours() % 12 || 12;
@@ -112,7 +113,7 @@
         secondHand.style.transform = `rotate(${secondDeg + 90}deg)`;
       }
       setInterval(() => {
-        getDigitalClock;
+        getDigitalClock();
       }, 1000);
       getDigitalClock();
     </script>
