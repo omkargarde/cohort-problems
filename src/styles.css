@@ -1,5 +1,6 @@
 @import "./globalStyles/colors.css";
 @import "./globalStyles/fonts.css";
+@import "./globalStyles/button.css";
 * {
   background-color: var(--baby-powder);
   color: var(--oxford-blue);

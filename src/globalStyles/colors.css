@@ -1,126 +1,61 @@
-@media (prefers-color-scheme: light) {
-  :root {
-    --text-50: oklch(95.5% 0.013 28.87);
-    --text-100: oklch(91.21% 0.026 29.42);
-    --text-200: oklch(82.26% 0.056 28.12);
-    --text-300: oklch(73.63% 0.087 29.18);
-    --text-400: oklch(65.16% 0.121 29.62);
-    --text-500: oklch(57.55% 0.154 31.05);
-    --text-600: oklch(48.98% 0.129 30.76);
-    --text-700: oklch(40.17% 0.101 31);
-    --text-800: oklch(30.69% 0.073 30.38);
-    --text-900: oklch(20.67% 0.04 31.07);
-    --text-950: oklch(15.21% 0.023 32.24);
+:root {
+  --text-50: oklch(95.5% 0.013 28.87);
+  --text-100: oklch(91.21% 0.026 29.42);
+  --text-200: oklch(82.26% 0.056 28.12);
+  --text-300: oklch(73.63% 0.087 29.18);
+  --text-400: oklch(65.16% 0.121 29.62);
+  --text-500: oklch(57.55% 0.154 31.05);
+  --text-600: oklch(48.98% 0.129 30.76);
+  --text-700: oklch(40.17% 0.101 31);
+  --text-800: oklch(30.69% 0.073 30.38);
+  --text-900: oklch(20.67% 0.04 31.07);
+  --text-950: oklch(15.21% 0.023 32.24);
 
-    --background-50: oklch(95.64% 0.011 31.07);
-    --background-100: oklch(91.29% 0.023 27.82);
-    --background-200: oklch(82.61% 0.048 29.43);
-    --background-300: oklch(73.92% 0.075 29.41);
-    --background-400: oklch(65.5% 0.106 30.51);
-    --background-500: oklch(57.58% 0.135 31.8);
-    --background-600: oklch(49.01% 0.114 31.4);
-    --background-700: oklch(40.08% 0.089 30.93);
-    --background-800: oklch(30.78% 0.064 31.1);
-    --background-900: oklch(20.59% 0.034 29.4);
-    --background-950: oklch(15.37% 0.019 33.38);
+  --background-50: oklch(95.64% 0.011 31.07);
+  --background-100: oklch(91.29% 0.023 27.82);
+  --background-200: oklch(82.61% 0.048 29.43);
+  --background-300: oklch(73.92% 0.075 29.41);
+  --background-400: oklch(65.5% 0.106 30.51);
+  --background-500: oklch(57.58% 0.135 31.8);
+  --background-600: oklch(49.01% 0.114 31.4);
+  --background-700: oklch(40.08% 0.089 30.93);
+  --background-800: oklch(30.78% 0.064 31.1);
+  --background-900: oklch(20.59% 0.034 29.4);
+  --background-950: oklch(15.37% 0.019 33.38);
 
-    --primary-50: oklch(95.3% 0.014 22.77);
-    --primary-100: oklch(90.51% 0.031 20.19);
-    --primary-200: oklch(81.22% 0.063 20.99);
-    --primary-300: oklch(72.06% 0.101 22.14);
-    --primary-400: oklch(63.53% 0.138 23.89);
-    --primary-500: oklch(56.06% 0.173 26.49);
-    --primary-600: oklch(47.73% 0.144 26.26);
-    --primary-700: oklch(39.07% 0.115 26.04);
-    --primary-800: oklch(29.89% 0.082 25.44);
-    --primary-900: oklch(20.03% 0.047 24.34);
-    --primary-950: oklch(14.61% 0.027 20.86);
+  --primary-50: oklch(95.3% 0.014 22.77);
+  --primary-100: oklch(90.51% 0.031 20.19);
+  --primary-200: oklch(81.22% 0.063 20.99);
+  --primary-300: oklch(72.06% 0.101 22.14);
+  --primary-400: oklch(63.53% 0.138 23.89);
+  --primary-500: oklch(56.06% 0.173 26.49);
+  --primary-600: oklch(47.73% 0.144 26.26);
+  --primary-700: oklch(39.07% 0.115 26.04);
+  --primary-800: oklch(29.89% 0.082 25.44);
+  --primary-900: oklch(20.03% 0.047 24.34);
+  --primary-950: oklch(14.61% 0.027 20.86);
 
-    --secondary-50: oklch(97.01% 0.022 138.98);
-    --secondary-100: oklch(94.33% 0.045 138.13);
-    --secondary-200: oklch(88.56% 0.088 139.02);
-    --secondary-300: oklch(83.28% 0.133 138.87);
-    --secondary-400: oklch(78.04% 0.171 139.32);
-    --secondary-500: oklch(73.46% 0.204 139.69);
-    --secondary-600: oklch(62.21% 0.17 139.74);
-    --secondary-700: oklch(50.75% 0.136 139.51);
-    --secondary-800: oklch(38.26% 0.098 139.57);
-    --secondary-900: oklch(25.03% 0.058 138.78);
-    --secondary-950: oklch(17.57% 0.033 138.42);
+  --secondary-50: oklch(97.01% 0.022 138.98);
+  --secondary-100: oklch(94.33% 0.045 138.13);
+  --secondary-200: oklch(88.56% 0.088 139.02);
+  --secondary-300: oklch(83.28% 0.133 138.87);
+  --secondary-400: oklch(78.04% 0.171 139.32);
+  --secondary-500: oklch(73.46% 0.204 139.69);
+  --secondary-600: oklch(62.21% 0.17 139.74);
+  --secondary-700: oklch(50.75% 0.136 139.51);
+  --secondary-800: oklch(38.26% 0.098 139.57);
+  --secondary-900: oklch(25.03% 0.058 138.78);
+  --secondary-950: oklch(17.57% 0.033 138.42);
 
-    --accent-50: oklch(96.95% 0.018 161.13);
-    --accent-100: oklch(94.15% 0.038 159.9);
-    --accent-200: oklch(88.35% 0.073 158.63);
-    --accent-300: oklch(82.99% 0.109 157.16);
-    --accent-400: oklch(77.82% 0.14 155.65);
-    --accent-500: oklch(73.31% 0.168 153.11);
-    --accent-600: oklch(62.1% 0.14 153.38);
-    --accent-700: oklch(50.61% 0.113 153.27);
-    --accent-800: oklch(38.16% 0.081 153.81);
-    --accent-900: oklch(24.91% 0.048 154.91);
-    --accent-950: oklch(17.5% 0.026 158.09);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-50: oklch(15.21% 0.023 32.24);
-    --text-100: oklch(20.46% 0.041 28.53);
-    --text-200: oklch(30.52% 0.074 29.26);
-    --text-300: oklch(39.86% 0.103 29.56);
-    --text-400: oklch(48.84% 0.13 30.23);
-    --text-500: oklch(57.29% 0.156 30.22);
-    --text-600: oklch(65% 0.122 28.98);
-    --text-700: oklch(73.27% 0.089 27.28);
-    --text-800: oklch(82.07% 0.057 26.6);
-    --text-900: oklch(91.02% 0.027 26.19);
-    --text-950: oklch(95.5% 0.013 28.87);
-
-    --background-50: oklch(15.04% 0.021 33.19);
-    --background-100: oklch(20.52% 0.038 28.89);
-    --background-200: oklch(30.71% 0.07 30.58);
-    --background-300: oklch(40.02% 0.097 30.48);
-    --background-400: oklch(48.98% 0.121 31.03);
-    --background-500: oklch(57.4% 0.145 30.89);
-    --background-600: oklch(65.31% 0.113 30.01);
-    --background-700: oklch(73.63% 0.083 28.64);
-    --background-800: oklch(82.4% 0.053 27.08);
-    --background-900: oklch(91.15% 0.025 26.93);
-    --background-950: oklch(95.72% 0.012 29.87);
-
-    --primary-50: oklch(14.61% 0.027 20.86);
-    --primary-100: oklch(20.03% 0.047 24.34);
-    --primary-200: oklch(29.89% 0.082 25.44);
-    --primary-300: oklch(39.07% 0.115 26.04);
-    --primary-400: oklch(47.73% 0.144 26.26);
-    --primary-500: oklch(56.06% 0.173 26.49);
-    --primary-600: oklch(63.53% 0.138 23.89);
-    --primary-700: oklch(72.06% 0.101 22.14);
-    --primary-800: oklch(81.22% 0.063 20.99);
-    --primary-900: oklch(90.51% 0.031 20.19);
-    --primary-950: oklch(95.3% 0.014 22.77);
-
-    --secondary-50: oklch(17.57% 0.033 138.42);
-    --secondary-100: oklch(25.03% 0.058 138.78);
-    --secondary-200: oklch(38.26% 0.098 139.57);
-    --secondary-300: oklch(50.75% 0.136 139.51);
-    --secondary-400: oklch(62.21% 0.17 139.74);
-    --secondary-500: oklch(73.46% 0.204 139.69);
-    --secondary-600: oklch(78.04% 0.171 139.32);
-    --secondary-700: oklch(83.28% 0.133 138.87);
-    --secondary-800: oklch(88.56% 0.088 139.02);
-    --secondary-900: oklch(94.33% 0.045 138.13);
-    --secondary-950: oklch(97.01% 0.022 138.98);
-
-    --accent-50: oklch(17.5% 0.026 158.09);
-    --accent-100: oklch(24.91% 0.048 154.91);
-    --accent-200: oklch(38.16% 0.081 153.81);
-    --accent-300: oklch(50.61% 0.113 153.27);
-    --accent-400: oklch(62.1% 0.14 153.38);
-    --accent-500: oklch(73.31% 0.168 153.11);
-    --accent-600: oklch(77.82% 0.14 155.65);
-    --accent-700: oklch(82.99% 0.109 157.16);
-    --accent-800: oklch(88.35% 0.073 158.63);
-    --accent-900: oklch(94.15% 0.038 159.9);
-    --accent-950: oklch(96.95% 0.018 161.13);
-  }
+  --accent-50: oklch(96.95% 0.018 161.13);
+  --accent-100: oklch(94.15% 0.038 159.9);
+  --accent-200: oklch(88.35% 0.073 158.63);
+  --accent-300: oklch(82.99% 0.109 157.16);
+  --accent-400: oklch(77.82% 0.14 155.65);
+  --accent-500: oklch(73.31% 0.168 153.11);
+  --accent-600: oklch(62.1% 0.14 153.38);
+  --accent-700: oklch(50.61% 0.113 153.27);
+  --accent-800: oklch(38.16% 0.081 153.81);
+  --accent-900: oklch(24.91% 0.048 154.91);
+  --accent-950: oklch(17.5% 0.026 158.09);
 }
