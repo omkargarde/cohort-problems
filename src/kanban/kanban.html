@@ -5,20 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
     <link rel="stylesheet" href="../styles.css" />
-    <style></style>
+    <style>
+      :root {
+        --min-width: 300px;
+        --max-width: 600px;
+      }
+      main {
+        padding: 20px;
+      }
+      form {
+        margin-block: 20px;
+        &label {
+          &div {
+            font-size: ;
+          }
+        }
+      }
+      input[type="text"] {
+        width: 500px;
+        padding: 5px 10px;
+      }
+      button {
+        padding: 5px 10px;
+      }
+      .container {
+        display: grid;
+        grid-auto-columns: minmax(var(--min-width), var(--max-width));
+        grid-auto-flow: column;
+        gap: 20px;
+      }
+      section {
+        padding: 10px;
+        height: 70dvh;
+        border-radius: 10px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      }
+    </style>
   </head>
   <body>
     <main>
       <h1>Kanban Board</h1>
-      <section>
-        <h2>Backlog</h2>
-      </section>
-      <section>
-        <h2>In Progress</h2>
-      </section>
-      <section>
-        <h2>Completed</h2>
-      </section>
+      <form action="addNewTask">
+        <label>
+          <div>Add new task</div>
+          <input type="text" name="task" placeholder="Add new task" />
+          <button>Add</button>
+        </label>
+      </form>
+      <div class="container">
+        <section>
+          <h2>Backlog</h2>
+        </section>
+        <section>
+          <h2>In Progress</h2>
+        </section>
+        <section>
+          <h2>Completed</h2>
+        </section>
+      </div>
     </main>
     <script></script>
   </body>

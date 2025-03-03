@@ -1,43 +1,46 @@
 @import url("https://fonts.googleapis.com/css?family=Noto%20Sans%20Oriya:700|Cantarell:400");
 
-body {
-  font-family: "Cantarell";
-  font-weight: 400;
+:root {
+  --font-xxl: 4.21rem; /* 67.36px */
+  --font-xl: 3.158rem; /* 50.56px */
+  --font-large: 2.369rem; /* 37.92px */
+  --font-normal: 1.777rem; /* 28.48px */
+  --font-small: 1.333rem; /* 21.28px */
+  --font-xs: 0.75rem; /* 12px */
 }
 
+body {
+  font-family: "Cantarell", sans-serif;
+  font-weight: 400;
+}
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: "Noto Sans Oriya";
+  font-family: "Noto Sans Oriya", sans-serif;
   font-weight: 700;
 }
-
-html {
-  font-size: 100%;
-} /* 16px */
-
 h1 {
-  font-size: 4.21rem; /* 67.36px */
+  font-size: var(--font-xxl);
 }
 
 h2 {
-  font-size: 3.158rem; /* 50.56px */
+  font-size: var(--font-xl);
 }
 
 h3 {
-  font-size: 2.369rem; /* 37.92px */
+  font-size: var(--font-large);
 }
 
 h4 {
-  font-size: 1.777rem; /* 28.48px */
+  font-size: var(--font-normal);
 }
 
 h5 {
-  font-size: 1.333rem; /* 21.28px */
+  font-size: var(--font-small);
 }
 
 small {
-  font-size: 0.75rem; /* 12px */
+  font-size: var(--font-xs);
 }
