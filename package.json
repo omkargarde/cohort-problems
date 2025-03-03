@@ -12,5 +12,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@tanstack/create-router": "^1.111.12"
   }
 }
