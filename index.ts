@@ -2,6 +2,7 @@ import { serve } from "bun";
 import index from "./index.html";
 import calculator from "./src/calculator/index.html";
 import clock from "./src/clock.html";
+import kanban from "./src/kanban/kanban.html";
 import todo from "./src/todo/index.html";
 const server = serve({
   routes: {
@@ -9,6 +10,7 @@ const server = serve({
     "/clock": clock,
     "/calculator": calculator,
     "/todo": todo,
+    "/kanban": kanban,
   },
 });
 

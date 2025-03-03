@@ -4,6 +4,9 @@
   background-color: var(--baby-powder);
   color: var(--oxford-blue);
   font-family: var(--font-family);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 .mx-auto {
   margin-inline: auto;
@@ -15,12 +18,7 @@
   align-items: center;
   margin: 0;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 48px);
-  grid-template-rows: repeat(4, 48px);
-  gap: 5px;
-}
+
 .button {
   font-size: 1rem;
   padding: 10px 20px;
