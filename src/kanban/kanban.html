@@ -18,6 +18,10 @@
       input[type="text"] {
         width: 530px;
       }
+      .error-message {
+        display: none;
+        color: var(--primary-700);
+      }
       button {
         font-size: var(--font-normal);
       }
@@ -39,10 +43,11 @@
   <body>
     <main>
       <h1>Kanban Board</h1>
-      <form submit="addNewTask">
+      <form action="">
         <label>
           <div>Add new task</div>
           <input type="text" name="task" placeholder="Add new task" />
+          <div class="error-message"></div>
           <button type="submit">Add</button>
         </label>
       </form>
@@ -65,19 +70,20 @@
       const $ = document;
       const formElement = $.querySelector("form");
       const inputElement = $.querySelector("input");
+      const errorMessageElement = $.getElementsByClassName(".error-message");
 
-      form.addEventListener("submit", (event) => {
+      formElement.addEventListener("submit", (event) => {
         event.preventDefault();
         addTask();
       });
 
       function addTask() {
         const formData = new FormData(formElement);
-        if (formData === "") {
-          inputElement.classList.add("error");
-          return;
-        }
         const task = formData.get("task").toLowerCase().trim();
+        if (task === "" || task === null || task === undefined) {
+          inputElement.classList.add("error");
+          errorMessageElement;
+        }
         console.log(task);
       }
     </script>

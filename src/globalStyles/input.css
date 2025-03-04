@@ -3,6 +3,6 @@ input {
   font-size: var(--font-normal);
 
   &.error {
-    border: 1px solid var(--primary-700);
+    border: 2px solid var(--primary-700);
   }
 }
