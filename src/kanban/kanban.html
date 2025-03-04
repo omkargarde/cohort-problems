@@ -44,6 +44,11 @@
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
           rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
       }
+      ul {
+        margin-inline: 10px;
+        font-size: var(--font-normal);
+        list-style-type: none;
+      }
     </style>
   </head>
   <body>
@@ -61,14 +66,17 @@
         <section>
           <h2>Backlog</h2>
           <hr />
+          <ul id="backlog"></ul>
         </section>
         <section>
           <h2>In Progress</h2>
           <hr />
+          <ul></ul>
         </section>
         <section>
           <h2>Completed</h2>
           <hr />
+          <ul></ul>
         </section>
       </div>
     </main>
@@ -77,6 +85,7 @@
       const formElement = $.querySelector("form");
       const inputElement = $.querySelector("input");
       const errorMessageElement = $.getElementById("error-message");
+      const backlogElement = $.querySelector("#backlog");
 
       formElement.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -89,6 +98,9 @@
         if (task === "" || task === null || task === undefined) {
           handleEmptyTaskError();
         }
+        const liElement = $.createElement("li");
+        liElement.innerHTML = task;
+        backlogElement.appendChild(liElement);
       }
       function handleEmptyTaskError() {
         inputElement.classList.add("error");
