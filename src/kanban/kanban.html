@@ -6,32 +6,24 @@
     <title>Kanban Board</title>
     <link rel="stylesheet" href="../styles.css" />
     <style>
-      :root {
-        --min-width: 300px;
-        --max-width: 600px;
-      }
       main {
         padding: 20px;
       }
       form {
         margin-block: 20px;
         & label {
-          & div {
-            font-size: var(--font-normal);
-          }
+          font-size: var(--font-normal);
         }
       }
       input[type="text"] {
         width: 530px;
-        padding: 5px 10px;
-        font-size: var(--font-normal);
       }
       button {
         font-size: var(--font-normal);
       }
       .container {
         display: grid;
-        grid-auto-columns: minmax(var(--min-width), var(--max-width));
+        grid-auto-columns: minmax(300px, 600px);
         grid-auto-flow: column;
         gap: 20px;
       }
@@ -47,11 +39,10 @@
   <body>
     <main>
       <h1>Kanban Board</h1>
-      <form sub="addNewTask">
+      <form submit="addNewTask">
         <label>
           <div>Add new task</div>
           <input type="text" name="task" placeholder="Add new task" />
-
           <button type="submit">Add</button>
         </label>
       </form>
@@ -72,7 +63,8 @@
     </main>
     <script>
       const $ = document;
-      const form = $.querySelector("form");
+      const formElement = $.querySelector("form");
+      const inputElement = $.querySelector("input");
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -80,7 +72,11 @@
       });
 
       function addTask() {
-        const formData = new FormData(form);
+        const formData = new FormData(formElement);
+        if (formData === "") {
+          inputElement.classList.add("error");
+          return;
+        }
         const task = formData.get("task").toLowerCase().trim();
         console.log(task);
       }

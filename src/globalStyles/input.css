@@ -1,2 +1,8 @@
 input {
+  padding: 5px 10px;
+  font-size: var(--font-normal);
+
+  &.error {
+    border: 1px solid var(--primary-700);
+  }
 }
