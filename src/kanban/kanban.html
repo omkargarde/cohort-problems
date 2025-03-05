@@ -112,7 +112,6 @@
         }
         formElement.reset();
         const liElement = $.createElement("li");
-        liElement.innerHTML = task;
         attachDragEvents(liElement);
         backlogElement.appendChild(liElement);
       }
@@ -128,7 +127,8 @@
           errorMessageElement.innerHTML = "";
         }, 2000);
       }
-      function attachDragEvents(target) {
+      function attachDragEvents(target, task) {
+        target.innerHTML = task;
         target.setAttribute("draggable", true);
         target.classList.add("draggable-item");
         target.addEventListener("dragstart", () => {
