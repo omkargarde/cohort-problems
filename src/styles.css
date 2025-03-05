@@ -3,7 +3,7 @@
 @import "./globalStyles/button.css";
 @import "./globalStyles/input.css";
 * {
-  background-color: var(--baby-powder);
+  background-color: var(--background-50);
   color: var(--oxford-blue);
   font-family: var(--font-family);
   padding: 0;
