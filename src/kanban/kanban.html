@@ -40,7 +40,7 @@
       }
       section {
         padding: 10px;
-        height: 70dvh;
+        min-height: 70dvh;
         border-radius: 10px;
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
           rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -49,6 +49,17 @@
         margin-inline: 10px;
         font-size: var(--font-normal);
         list-style-type: none;
+        padding-block: 10px;
+        margin-inline: 0;
+      }
+      .draggable-item {
+        background-color: var(--background-100);
+        border-radius: 5px;
+        margin-block: 10px;
+        padding: 10px;
+      }
+      .dragged {
+        /* TODO */
       }
     </style>
   </head>
@@ -64,17 +75,17 @@
         </label>
       </form>
       <div class="container">
-        <section>
+        <section id="backlog">
           <h2>Backlog</h2>
           <hr />
           <ul id="backlog"></ul>
         </section>
-        <section>
+        <section id="inProgress">
           <h2>In Progress</h2>
           <hr />
           <ul></ul>
         </section>
-        <section>
+        <section id="completed">
           <h2>Completed</h2>
           <hr />
           <ul></ul>
@@ -99,8 +110,10 @@
         if (task === "" || task === null || task === undefined) {
           handleEmptyTaskError();
         }
+        formElement.reset();
         const liElement = $.createElement("li");
         liElement.innerHTML = task;
+        attachDragEvents(liElement);
         backlogElement.appendChild(liElement);
       }
       function handleEmptyTaskError() {
@@ -114,6 +127,16 @@
           errorMessageElement.classList.add("no-error");
           errorMessageElement.innerHTML = "";
         }, 2000);
+      }
+      function attachDragEvents(target) {
+        target.setAttribute("draggable", true);
+        target.classList.add("draggable-item");
+        target.addEventListener("dragstart", () => {
+          target.classList.add("dragged");
+        });
+        target.addEventListener("dragend", () => {
+          target.classList.remove("dragged");
+        });
       }
     </script>
   </body>
