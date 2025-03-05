@@ -75,17 +75,17 @@
         </label>
       </form>
       <div class="container">
-        <section id="backlog">
+        <section>
           <h2>Backlog</h2>
           <hr />
           <ul id="backlog"></ul>
         </section>
-        <section id="inProgress">
+        <section>
           <h2>In Progress</h2>
           <hr />
           <ul></ul>
         </section>
-        <section id="completed">
+        <section>
           <h2>Completed</h2>
           <hr />
           <ul></ul>
@@ -105,13 +105,14 @@
         addTask();
       });
       // handle dragged element
-      const allBoards = document.querySelectorAll("section");
+      const allSections = document.querySelectorAll("section");
       const allItems = document.querySelectorAll(".draggable-item");
 
-      allBoards.forEach((board) => {
-        board.addEventListener("dragover", () => {
+      allSections.forEach((section) => {
+        section.addEventListener("dragover", (event) => {
+          event.preventDefault();
           const draggedElement = document.querySelector(".dragged");
-          board.appendChild(draggedElement);
+          section.querySelector("ul").appendChild(draggedElement);
         });
       });
 
