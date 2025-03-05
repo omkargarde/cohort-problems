@@ -99,11 +99,23 @@
       const errorMessageElement = $.getElementById("error-message");
       const backlogElement = $.querySelector("#backlog");
 
+      // create new task
       formElement.addEventListener("submit", (event) => {
         event.preventDefault();
         addTask();
       });
+      // handle dragged element
+      const allBoards = document.querySelectorAll("section");
+      const allItems = document.querySelectorAll(".draggable-item");
 
+      allBoards.forEach((board) => {
+        board.addEventListener("dragover", () => {
+          const draggedElement = document.querySelector(".dragged");
+          board.appendChild(draggedElement);
+        });
+      });
+
+      // validate user input
       function addTask() {
         const formData = new FormData(formElement);
         const task = formData.get("task").toLowerCase().trim();
@@ -112,9 +124,10 @@
         }
         formElement.reset();
         const liElement = $.createElement("li");
-        attachDragEvents(liElement);
+        attachDragEvents(liElement, task);
         backlogElement.appendChild(liElement);
       }
+      // handle user input error
       function handleEmptyTaskError() {
         inputElement.classList.add("error");
         errorMessageElement.classList.add("error-message");
@@ -127,6 +140,7 @@
           errorMessageElement.innerHTML = "";
         }, 2000);
       }
+      // render user task
       function attachDragEvents(target, task) {
         target.innerHTML = task;
         target.setAttribute("draggable", true);
